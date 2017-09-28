@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IAS Vetting Tool</title>
+    <script type="application/javascript" src="ias.js"></script>
+
+    <style>
+        #myProgress {
+        width: 100%;
+        background-color: grey;  }
+    #myBar {
+        width: 0%;
+        height: 30px;
+        background-color: green;  }
+    </style>
+
+</head>
+
+<body>
+    <h2 align="center">IAS vetting Tool</h2>
+    <h4>How to use :</h4>
+    <ul>
+        <li>Click on file selector below and choose the input file.</li>
+        <li>Make sure that file only contains domains separated by newline.</li>
+        <li>Wait for progress bar to fill.</li>
+        <li>Download link will appear, click it to download the file.</li>
+        <li>Refresh before uploading another file.</li>
+    </ul>
+    <input type="file" name="fileIn" accept="text/csv" onchange="readFile(event)">
+    <br>
+    <h4 id="urlsnum"></h4>
+    <div id="myProgress" style="display: none">
+        <div id="myBar"></div>
+    </div><br>
+    <br>
+    <div id="output" style="display: none">
+        <a href="#" download="IASscanned.tsv" id="downloadLink">Click Here to download the file!!!</a>
+    </div>
+</body>
+</html>
